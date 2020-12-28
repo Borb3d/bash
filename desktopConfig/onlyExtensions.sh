@@ -10,6 +10,19 @@ purpleColour="\e[0;35m\033[1m"
 turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
 
+
+## CANCEL APP ##
+trap ctrl-c INT
+
+function ctrl-c(){
+    /usr/bin/printf "\n${yellowColour}Fixing dependencies, please wait for exit...\n${greenColour}"
+    sleep 2
+    sudo /usr/bin/dpkg --configure -a
+    sudo /usr/bin/apt-get install -f -y
+    /usr/bin/echo -e "\n${yellowColour}[!] ${redColour}Exiting...\n${endColour}"
+    exit 0
+}
+
 function configureExt(){
     /usr/bin/printf "\n${yellowColour}[!]${grayColour}Installing extension $1..."
     gnome-extensions install $2 -f 2>>$HOME/error.log
