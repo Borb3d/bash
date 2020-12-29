@@ -15,6 +15,8 @@ grayColour="\e[0;37m\033[1m"
 
 ## VARIABLES ##
 zone=$(pwd)
+backgroundImage="wild.png"
+terminalImage="pirata1.jpg"
 
 #Programs
 chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
@@ -206,8 +208,8 @@ function desktop(){
     read -rsn1 -p "Press any key to continue";/usr/bin/echo
     #Moving my images to your user images folder, you must to configurate after
     /usr/bin/printf "${grayColour}Putting my images on your user images folder...\n${yellowColour}"
-    /usr/bin/cp $HOME/tmp/wild.png $HOME/Pictures/wild.png 2>>$HOME/error.log || /usr/bin/cp $HOME/tmp/wild.png $HOME/Imágenes/wild.png 2>>$HOME/error.log
-    /usr/bin/cp $HOME/tmp/pirata1.jpg $HOME/Pictures/pirata1.jpg 2>>$HOME/error.log || /usr/bin/cp $HOME/tmp/pirata1.jpg $HOME/Imágenes/pirata1.jpg 2>>$HOME/error.log
+    /usr/bin/cp $HOME/tmp/${backgroundImage} $HOME/Pictures/${backgroundImage} 2>>$HOME/error.log || /usr/bin/cp $HOME/tmp/${backgroundImage} $HOME/Imágenes/${backgroundImage} 2>>$HOME/error.log
+    /usr/bin/cp $HOME/tmp/${terminalImage} $HOME/Pictures/${terminalImage} 2>>$HOME/error.log || /usr/bin/cp $HOME/tmp/${terminalImage} $HOME/Imágenes/${terminalImage} 2>>$HOME/error.log
     /usr/bin/printf "${yellowColour}[!]${grayColour}You can change the tilix background on (Tilix configuration => Appareance => Background image)...\n${blueColour}"
     read -rsn1 -p "Press any key to continue";/usr/bin/echo
     #Install gdm-brackground (For change background image for Login Page)
@@ -324,8 +326,8 @@ function body(){
 function configureNewUser(){
     #Moving my images to your user images folder, you must to configurate after
     /usr/bin/printf "${grayColour}Putting my images on your user images folder...\n${yellowColour}"
-    sudo /usr/bin/cp $HOME/tmp/wild.png /home/${name_new_user}/Pictures/wild.png 2>>$HOME/error.log || /usr/bin/cp $HOME/tmp/wild.png /home/${name_new_user}/Imágenes/wild.png 2>>$HOME/error.log
-    sudo /usr/bin/cp $HOME/tmp/pirata1.jpg /home/${name_new_user}/Pictures/pirata1.jpg 2>>$HOME/error.log || /usr/bin/cp $HOME/tmp/pirata1.jpg /home/${name_new_user}/Imágenes/pirata1.jpg 2>>$HOME/error.log
+    sudo /usr/bin/cp $HOME/tmp/${backgroundImage} /home/${name_new_user}/Pictures/${backgroundImage} 2>>$HOME/error.log || /usr/bin/cp $HOME/tmp/${backgroundImage} /home/${name_new_user}/Imágenes/${backgroundImage} 2>>$HOME/error.log
+    sudo /usr/bin/cp $HOME/tmp/${terminalImage} /home/${name_new_user}/Pictures/${terminalImage} 2>>$HOME/error.log || /usr/bin/cp $HOME/tmp/${terminalImage} /home/${name_new_user}/Imágenes/${terminalImage} 2>>$HOME/error.log
     /usr/bin/printf "${yellowColour}[!]${grayColour}You can change the tilix background on (Tilix configuration => Appareance => Background image)...\n${blueColour}"
     read -rsn1 -p "Press any key to continue";/usr/bin/echo
     #Unziping folders and puting all in correct folders
