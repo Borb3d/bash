@@ -181,7 +181,7 @@ function hackingTools(){
     /usr/bin/sleep 1 && /usr/bin/clear
     #Unzipping rockyou to /opt/utils
     /usr/bin/printf "\n${grayColour}Unzipping rockyou to /opt/utils...\n${yellowColour}"
-    /usr/bin/gunzip -c /usr/share/wordlists/rockyou.txt.gz > /opt/utils/rockyou.txt >/dev/null 2>>$HOME/error.log && /usr/bin/printf "${grayColour}[*]${blueColour} rockyou.txt ${greenColour}OK\n" >> $HOME/output.txt || /usr/bin/printf "${redColour}[x] rockyou.txt is NOT Unzipped\n" >> $HOME/output.txt
+    sudo /usr/bin/gunzip -c /usr/share/wordlists/rockyou.txt.gz > /opt/utils/rockyou.txt >/dev/null 2>>$HOME/error.log && /usr/bin/printf "${grayColour}[*]${blueColour} rockyou.txt ${greenColour}OK\n" >> $HOME/output.txt || /usr/bin/printf "${redColour}[x] rockyou.txt is NOT Unzipped\n" >> $HOME/output.txt
     /usr/bin/sleep 1 && /usr/bin/clear
     #Downloading Invoke-Kerberoast
     /usr/bin/printf "\n${grayColour}Downloading Invoke-Kerberoast...\n${yellowColour}"
