@@ -299,8 +299,8 @@ function hackingTools(){
     #Installing Sonic Visualizer (On Stego folder)
     /usr/bin/printf "\n${grayColour}Downloading and configuring Sonic Visualizer...\n${yellowColour}"
     /usr/bin/wget ${sonicVisualizer} --no-check-certificate -O /opt/stego/SonicVisualizer.AppImage -q --show-progress
-    /usr/bin/chmod -x /opt/stego/SonicVisualizer.AppImage >/dev/null 2>>$HOME/error.log && /usr/bin/printf "${grayColour}[*]${blueColour} Sonic Visualizer ${greenColour}OK\n" >> $HOME/output.txt || /usr/bin/printf "${redColour}[x] Sonic Visualizer is NOT Installed\n" >> $HOME/output.txt
     sudo /usr/bin/ln -s /opt/stego/SonicVisualizer.AppImage /usr/bin/sonicVisualizer
+    /usr/bin/chmod +x /opt/stego/SonicVisualizer.AppImage >/dev/null 2>>$HOME/error.log && /usr/bin/printf "${grayColour}[*]${blueColour} Sonic Visualizer ${greenColour}OK\n" >> $HOME/output.txt || /usr/bin/printf "${redColour}[x] Sonic Visualizer is NOT Installed\n" >> $HOME/output.txt
     /usr/bin/sleep 1 && /usr/bin/clear
     #Clonnig SecList repository
     /usr/bin/printf "\n${grayColour}Downloading SecLists repository...\n${yellowColour}"
