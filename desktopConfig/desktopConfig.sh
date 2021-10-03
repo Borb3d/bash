@@ -503,7 +503,7 @@ if [ $(id -u) != "0" ]; then
     /usr/bin/printf "${redColour}\nNow i gonna restart the system\n"
     /usr/bin/printf "${redColour}\nThank you for use my script...\n\nﮊBorb3dﮊ\n\n"
     /usr/bin/printf "${grayColour}\nRemember to configurate the Desktop...Saved on end of output.txt\n"
-    /usr/bin/printf "\n\tCommand Runner (For ip.sh Script)\n\tThemes\n\t\t1. Arc-Darkest-3.36\n\t\t2. Mint-Y-Dark-Aqua\n\t\t3. Mint-T-Dark-Aqua\n\t\t4. DMZ-Red\n\t\t5. Arc-Darkest-3.36" >> $HOME/output.txt
+    /usr/bin/printf "\n\tThemes\n\t\t1. Arc-Darkest-3.36\n\t\t2. Mint-Y-Dark-Aqua\n\t\t3. Mint-T-Dark-Aqua\n\t\t4. DMZ-Red\n\t\t5. Arc-Darkest-3.36" >> $HOME/output.txt
     sleep 3
     read -rsn1 -p "Press any key to continue";/usr/bin/echo
     sudo /sbin/reboot
