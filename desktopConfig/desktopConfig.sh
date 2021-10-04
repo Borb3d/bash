@@ -105,6 +105,8 @@ function requirements(){
     aptInstall "yasm" "yasm"
     aptInstall "pkg-config" "pkg-config"
     aptInstall "libgmp-dev" "libgmp-dev"
+    aptInstall "libffi-dev" "libffi-dev"
+    aptInstall "python-dev" "python-dev"
     aptInstall "libpcap-dev" "libpcap-dev"
     aptInstall "libbz2-dev" "libbz2-dev"
     #If u have Nvidia GPU install this
@@ -278,11 +280,9 @@ function hackingTools(){
     /usr/bin/python3 -m pip install /tmp/$(echo $impacket | cut -d "/" -f 9 | sed 's/.tar.gz//g') >/dev/null 2>>$HOME/error.log && /usr/bin/printf "${grayColour}[*]${blueColour} Impacket ${greenColour}OK\n" >> $HOME/output.txt || /usr/bin/printf "${redColour}[x] Impacket is NOT Installed\n" >> $HOME/output.txt
     /usr/bin/sleep 1 && /usr/bin/clear
     #Installing CrackMapExec
-    /usr/bin/printf "\n${grayColour}Remember to install CrackMapExec Manually...\n${yellowColour}"
-    /usr/bin/printf "\nOpening Google Chrome on CrackMapExec page and Tilix...\n${yellowColour}"
-    /usr/bin/google-chrome "https://github.com/byt3bl33d3r/CrackMapExec/wiki/Installation" &>/dev/null &
-    /usr/bin/tilix
-    read -rsn1 -p "Press any key to continue";/usr/bin/echo
+    /usr/bin/printf "\n${grayColour}Configurin CrackMapExec ('cme' to use)...\n${yellowColour}"
+    /usr/bin/python3 -m pip install crackmapexec >/dev/null 2>>$HOME/error.log && /usr/bin/printf "${grayColour}[*]${blueColour} CrackMapExec ${greenColour}OK\n" >> $HOME/output.txt || /usr/bin/printf "${redColour}[x] CrackMapExec is NOT Installed\n" >> $HOME/output.txt
+    sudo /usr/bin/ln -s $HOME/.local/lib/python3.8/site-packages/cme/crackmapexec.py /usr/bin/cme
     #Installing enum4linux
     /usr/bin/printf "\n${grayColour}Downloading and configuring enum4linux...\n${yellowColour}"
     /usr/bin/git clone https://github.com/CiscoCXSecurity/enum4linux.git /opt/enum4linux
