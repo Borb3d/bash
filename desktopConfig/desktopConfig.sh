@@ -280,7 +280,7 @@ function hackingTools(){
     /usr/bin/python3 -m pip install /tmp/$(echo $impacket | cut -d "/" -f 9 | sed 's/.tar.gz//g') >/dev/null 2>>$HOME/error.log && /usr/bin/printf "${grayColour}[*]${blueColour} Impacket ${greenColour}OK\n" >> $HOME/output.txt || /usr/bin/printf "${redColour}[x] Impacket is NOT Installed\n" >> $HOME/output.txt
     /usr/bin/sleep 1 && /usr/bin/clear
     #Installing CrackMapExec
-    /usr/bin/printf "\n${grayColour}Configurin CrackMapExec ('cme' to use)...\n${yellowColour}"
+    /usr/bin/printf "\n${grayColour}Configuring CrackMapExec ('cme' to use)...\n${yellowColour}"
     /usr/bin/python3 -m pip install crackmapexec >/dev/null 2>>$HOME/error.log && /usr/bin/printf "${grayColour}[*]${blueColour} CrackMapExec ${greenColour}OK\n" >> $HOME/output.txt || /usr/bin/printf "${redColour}[x] CrackMapExec is NOT Installed\n" >> $HOME/output.txt
     sudo /usr/bin/ln -s $HOME/.local/lib/python3.8/site-packages/cme/crackmapexec.py /usr/bin/cme
     #Installing enum4linux
